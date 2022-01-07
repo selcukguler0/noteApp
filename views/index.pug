@@ -1,0 +1,42 @@
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='/css/login.css')
+    title Document
+  body
+    h3(style="color:white") #{verifyMessage}
+    if isAuth
+      #formContent
+        h2.active
+          a(href='/logout' style='color: black;') Logout
+          each verify in isVerified ? isVerified : []
+            unless verify.verified
+              h4(style="color:black") Please verify your email!
+      .wrapper.fadeInDown
+        #formContent
+          h2 Welcome #{email}
+          each verify in isVerified ? isVerified : []
+            if verify.verified
+              h3 Add Note
+              form(method="post" action="/")
+                input#note.fadeIn.second(type='text' name='note' placeholder='Note')
+                input.fadeIn.fourth(type='submit' value='Add')
+        br
+        #formContent
+          each results in notes ? notes : []
+            h2 #{results.note}
+            br
+
+    else
+      .wrapper.fadeInDown
+        #formContent
+          
+          h4(style="color:green") #{message}
+          h2.active
+            a(href='/login' style='color: black;') Sign In
+          h2.active
+            a(href='/register' style='color: black;') Sign Up
+          h2.active
+            a(href='/contact-us' style='color: black;') Contact Us

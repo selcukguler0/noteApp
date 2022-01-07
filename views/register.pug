@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='/css/login.css')
+    title Document
+  body
+    #formContent
+      // Tabs Titles
+      h2.active
+        a(href='/' style='color: black;') Home
+          
+    .wrapper.fadeInDown
+      #formContent
+        // Tabs Titles
+        h2.active  Sign Up 
+        br
+        h4(style="color:black") #{error}
+        form(method="post" action="/register")
+          input#login.fadeIn.second(type='text' name='email' placeholder='email')
+          input#password.fadeIn.third(type='text' name='password' placeholder='password')
+          input#confirmpassword.fadeIn.third(type='text' name='confirmpassword' placeholder='password')
+          input.fadeIn.fourth(type='submit' value='Sign Up')
+   

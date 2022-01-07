@@ -1,0 +1,22 @@
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='/css/login.css')
+    title Document
+  body
+    #formContent
+      // Tabs Titles
+      h2.active
+        a(href='/' style='color: black;') Home
+    .wrapper.fadeInDown
+      #formContent
+        // Tabs Titles
+        h2.active  Contact Us 
+        h4(style="color:black") #{success}
+        // Login Form
+        form(action="/contact-us" method="post")
+          input#email.fadeIn.second(type='text' name='email' placeholder='Email')
+          input#request.fadeIn.third(type='text' name='request' placeholder='Request')
+          input.fadeIn.fourth(type='submit' value='Send')
