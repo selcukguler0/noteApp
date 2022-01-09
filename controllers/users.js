@@ -5,8 +5,8 @@ const session = require("express-session");
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'mailertesting00@gmail.com',
-        pass: 'Joel0011'
+        user: 'gmail@gmail.com',
+        pass: 'pass'
     }
 });
 
